@@ -24,23 +24,12 @@ jobs:
 
     - name: installing dependencies
       run: npm ci
-    
-    - name: installing codecov
-      run: npm i -g codecov
-      
+
     - name: running lint
       run: npm run lint
-    
-    - name: running codecov
-      run: npm run codecov
 
     - name: building
       run: npm run build
 
     - name: testing
       run: npm run test
-
-    - name: codecov action
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
